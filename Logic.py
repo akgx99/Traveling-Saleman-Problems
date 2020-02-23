@@ -6,9 +6,15 @@ class Logic():
     """
 
     def __init__(self):
+        """Constructeur de la classe Logic """
         self._cities = []
-
     
+    def addCity(self, city):
+        """Permet d'ajouter une ville à la liste 
+        - city : la ville à ajouter
+        """
+        self.cities.append(city)
+
     """ Getter & Setter """
     def get_cities(self):
         return self._cities
