@@ -3,8 +3,19 @@ class Parser():
     - file : le fichier à parcourir
     """
 
-    def __init__(self, file):
-        self._file = file
+    def __init__(self):
+        self._file = None
+
+    def open(self):
+        """ Permet d'ouvir un fichier """
+        try:
+            name = input("Nom du fichier : \n")
+            self.file = open(name, 'r')
+        except IOError:
+            print('Cannot open : ', name)
+        self.file.close()
+
+    
 
     """ Getter & Setter """
     def get_file(self):
