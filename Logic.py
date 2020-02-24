@@ -1,4 +1,5 @@
 import Parser as parse
+import City
 
 class Logic():
     """ Classe servant à représenter la couche métier. elle contient :
@@ -20,12 +21,14 @@ class Logic():
         FileParser = parse.Parser()
         FileParser.open()
         FileParser.extractContents()
-        self.cities.append(FileParser.createCities())
+        for x in FileParser.data:
+            ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenant dans chaques jeu de données
+            city = City.City(int(ele[0]), "None", float(ele[1]), float(ele[2])) # construteur de la ville avec les éléments précédents
+            self.cities.append(city)
 
     def displayCities(self):
         """ Permet d'afficher les informations des villes """
-        for li in self.cities:
-            for city in li:
+        for city in self.cities:
                 print(city)
 
     """ Getter & Setter """
