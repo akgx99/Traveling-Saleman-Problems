@@ -29,8 +29,9 @@ class Logic():
         #calcul
         calc = (sin(degresLa) ** 2) + cos(rLat1) * cos(rLat2) * (sin(degresLo) ** 2)
         dist = 2 * atan2(sqrt(calc), sqrt(1-calc))
+        out = (EARTH_RADIUS * dist) / 1000
 
-        return (EARTH_RADIUS * dist) / 1000
+        return round(out, 2)
 
     def increasingTour(self):
         """ Algo de parcours des villes une à une par odre croissant de leur position """
