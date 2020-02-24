@@ -1,7 +1,7 @@
-import Logic
+import CitiesManager
 
 def main():
-   process = Logic.Logic()
+   process = CitiesManager.CitiesManager()
    process.addCities()
    process.displayCities()
 

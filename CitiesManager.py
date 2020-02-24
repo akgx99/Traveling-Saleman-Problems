@@ -1,8 +1,8 @@
 import Parser as parse
 import City
 
-class Logic():
-    """ Classe servant à représenter la couche métier. elle contient :
+class CitiesManager():
+    """ Classe servant les villes à visiter. elle contient :
     - Une liste des villes (City)
     """
 
