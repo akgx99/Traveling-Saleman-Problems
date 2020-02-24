@@ -56,4 +56,6 @@ class Logic():
     vectors = property(get_vectors)
     costs = property(get_costs)
 
-    
+    """ ToString """
+    def __str__(self):
+        return "Le coût est de "+str(self._costs)+" km"

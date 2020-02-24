@@ -41,4 +41,4 @@ class City:
         else:
             visited = "n'a pas été visité"
 
-        return "La ville "+str(self.id)+" du nom de "+self.name+" qui se trouve en position "+str(self._latitude)+"::"+str(self.longitude)+" "+visited
+        return "La ville "+str(self.id)+" "+visited
