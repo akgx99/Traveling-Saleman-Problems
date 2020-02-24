@@ -15,9 +15,8 @@ class Logic():
 
     def distanceInKm(self, latitude1, longitude1, latitude2, longitude2):
         """ Calcul de la distance en mètre en prennant en compte que la terre est sphérique """
-
         EARTH_RADIUS = 6378137; # Terre -> shpère de 6378km de rayon
-
+        
         #degres to radian
         rLat1 = latitude1*(pi/180)  
         rLon1 = longitude1*(pi/180)
