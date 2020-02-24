@@ -1,7 +1,10 @@
-import Logic as L
+import Logic as l
 
 def main():
-   pass
+   process = l.Logic()
+   process.addCities()
+
+   process.displayCities()
 
 if __name__ == "__main__":
     main()
