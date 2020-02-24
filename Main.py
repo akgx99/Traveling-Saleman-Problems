@@ -9,7 +9,7 @@ def main():
    algo.increasingTour()
 
    manager.displayCities()
-   print("Le coût est de "+str(algo.costs)+" km")
+   print(algo)
 
 if __name__ == "__main__":
    main()
