@@ -2,7 +2,7 @@ import Parser as parse
 import City
 
 class CitiesManager():
-    """ Classe servant les villes à visiter. elle contient :
+    """ Classe servant à gérer les villes à visiter. elle contient :
     - Une liste des villes (City)
     """
 
