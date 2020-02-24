@@ -10,24 +10,19 @@ class Parser():
         self._file = None
         self._data = []
 
-    def open(self):
-        """ Permet d'ouvir un fichier """
+    def extractContents(self):
+        """ Permet d'extraire ligne par ligne sous forme de liste les données """
         try:
             name = input("Nom du fichier : \n")
             self.file = open(name, 'r')
         except IOError:
-            print('Cannot open : ', name)
-      
-    def extractContents(self):
-        """ Permet d'extraire sous forme de liste les données """
-        try:
+            print('Cannot open: ', name)
+        else:
             with self.file as f:
                 for line in f:
                     self._data.append(line)
             self._file.close()
-        except:
-            print("impossible to recover the data")
-            
+
     """ Getter & Setter """
     def get_file(self):
         return self._file

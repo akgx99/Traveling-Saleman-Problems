@@ -19,7 +19,6 @@ class Logic():
     def addCities(self):
         """ Permet depuis un fichier (définit par l'utilisateur) d'ajouter un ensemble de ville """
         FileParser = parse.Parser()
-        FileParser.open()
         FileParser.extractContents()
         for x in FileParser.data:
             ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenus dans chaque jeu de données
