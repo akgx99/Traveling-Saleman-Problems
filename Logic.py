@@ -22,7 +22,7 @@ class Logic():
         FileParser.open()
         FileParser.extractContents()
         for x in FileParser.data:
-            ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenant dans chaques jeu de données
+            ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenus dans chaque jeu de données
             city = City.City(int(ele[0]), "None", float(ele[1]), float(ele[2])) # construteur de la ville avec les éléments précédents
             self.cities.append(city)
 
