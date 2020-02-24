@@ -1,4 +1,4 @@
-from math import sqrt, cos, sin ,radians, atan2
+from math import sqrt, pi, sin, cos,radians, atan2
 
 class Logic():
     """ Classe contenant les différents algorithmes du plus court chemin. Elle contient :
@@ -19,11 +19,11 @@ class Logic():
         EARTH_RADIUS = 6378137; # Terre -> shpère de 6378km de rayon
 
         #degres to radian
-        rLat1 = cos(radians(latitude1))  
-        rLat2 = cos(radians(latitude2))
-        rLon1 = cos(radians(longitude1))  
-        rlon2 = cos(radians(longitude2)) 
-        degresLo = (rlon2 - rLon1)  / 2
+        rLat1 = latitude1*(pi/180)  
+        rLon1 = longitude1*(pi/180)
+        rLon2 = longitude2*(pi/180)
+        rLat2 = latitude2*(pi/180)
+        degresLo = (rLon2 - rLon1)  / 2
         degresLa = (rLat2 - rLat1)  / 2
 
         #calcul
