@@ -29,6 +29,21 @@ class Parser():
             self._file.close()
         except:
             print("impossible to recover the data")
+    
+    def createCities(self):
+        """ Permet de créer les objets "City" a partir des données connues
+        
+        Returns:
+            Un tableau avec les City créée
+        """
+        cities = []
+
+        for x in self.data:
+           ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenant dans chaques jeu de données
+           city = City.City(int(ele[0]), "None", float(ele[1]), float(ele[2])) # construteur de la ville avec les éléments précédents
+           cities.append(city)
+
+        return cities
 
     """ Getter & Setter """
     def get_file(self):
