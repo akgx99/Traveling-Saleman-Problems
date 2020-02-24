@@ -17,12 +17,12 @@ class Logic():
         """ Algo de parcours des villes une à une par odre croissant de leur position """
         self.start.visited = True
 
-        for vector in self._vectors:
-            vector.visited = True
-            suivant = self._vectors[+1]
+        for current in self._vectors:
+            current.visited = True
+            next = self._vectors[+1]
 
             # calcul de distance de coordonnées selon le thèoréme de Pythagore
-            self._costs += sqrt( (suivant.longitude - vector.latitude) ** 2 + (suivant.latitude - vector.longitude) ** 2) 
+            self._costs += sqrt( (next.longitude - current.longitude) ** 2 + (next.latitude - current.latitude) ** 2) 
 
     """ Getter & Setter """
     def get_vectors(self):
