@@ -14,28 +14,18 @@ class Parser():
         """ Permet d'extraire ligne par ligne sous forme de liste les données """
         try:
             name = input("Nom du fichier : \n")
-            self.file = open(name, 'r')
+            self._file = open(name, 'r')
         except IOError:
             print('Cannot open: ', name)
         else:
-            with self.file as f:
+            with self._file as f:
                 for line in f:
                     self._data.append(line)
             self._file.close()
 
     """ Getter & Setter """
-    def get_file(self):
-        return self._file
-
-    def set_file(self, file):
-        self._file = file
-    
     def get_data(self):
         return self._data
 
-    def set_data(self, data):
-        self._data = data
-
     """ Property """
-    file = property(get_file, set_file)
-    data = property(get_data, set_data)
+    data = property(get_data)
