@@ -10,13 +10,12 @@ class Parser():
         self._file = None
         self._data = []
 
-    def extractContents(self):
+    def extractContents(self, file):
         """ Permet d'extraire ligne par ligne sous forme de liste les données """
         try:
-            name = input("Nom du fichier : \n")
-            self._file = open(name, 'r')
+            self._file = open(file, 'r')
         except IOError:
-            print('Cannot open: ', name)
+            print('Cannot open: ', file)
         else:
             with self._file as f:
                 for line in f:
