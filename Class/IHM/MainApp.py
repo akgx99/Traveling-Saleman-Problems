@@ -26,11 +26,13 @@ class MainApp(tk.Frame):
 
         # affichage la liste des villes visitées
         self._displayRes = tk.Listbox(self, width=30, height=20)
-        self._displayRes.pack()
-
-        # affichage du coût
-        self._displayCosts = tk.Label(self, text="Aucun algorithme choisi...")
-        self._displayCosts.pack(side="bottom")
+        self._displayRes.pack(side="left", fill="y")
+        
+        scrollBar = tk.Scrollbar(self, orient="vertical")
+        scrollBar.config(command=self._displayRes.yview)
+        scrollBar.pack(side="right", fill="y")
+        
+        self._displayRes.config(yscrollcommand=scrollBar.set)
 
     def LaunchAlgorithm(self, name):
         """ Permet de lancer l'algorithme choisi """
