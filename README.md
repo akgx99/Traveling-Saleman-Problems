@@ -14,6 +14,8 @@ de DUT informatique.
 
 ## Quick start
 
+### CLI
+
 Dans un fichier ou directement depuis la console python exécutez le code suivant :
 
 ```python
@@ -22,7 +24,7 @@ import Logic
 
 def main():
    manager = CitiesManager.CitiesManager() # construteur du CitiesManager
-   manager.addCities() # ajouter des villes a partir d"un fichier
+   manager.addCities("fileName") # ajouter des villes a partir d"un fichier
 
    if(len(manager.cities) > 0): # si plus d'une ville existe
       
@@ -36,6 +38,10 @@ def main():
 if __name__ == "__main__":
    main()
 ```
+
+### GUI
+
+Lancer le fichier ```main.py```
 
 Le programme pour fonctionner à besoin d'un fichier, renseignez un des fichiers suivants (ou créer le votre) :
 
@@ -58,4 +64,4 @@ Pour aller plus loin se référer à la documentation technique (pas encore disp
 A l'heure actuelle le projet comporte :
 
 - Un algo de tournée croissante (par numéro de ville)
-- Une interface console
+- Une interface console (CLI)
