@@ -37,8 +37,4 @@ class City:
     """ ToString """
     def __str__(self):
         if(self._visited):
-            visited = "a été visité"
-        else:
-            visited = "n'a pas été visité"
-
-        return "La ville "+str(self.id)+" "+visited
+            return "La ville "+str(self.id)+" a été visité"
