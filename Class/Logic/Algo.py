@@ -1,6 +1,6 @@
 from math import sqrt, pi, sin, cos,radians, atan2
 
-class Logic():
+class Algo():
     """ Classe contenant les différents algorithmes du plus court chemin. Elle contient :
     - Une liste des sommets
     - Un sommet de départ

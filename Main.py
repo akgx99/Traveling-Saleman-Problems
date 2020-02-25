@@ -1,4 +1,4 @@
-import Class.Application as App
+import Class.IHM.MainApp as App
 import tkinter as Tk
 
 def main():

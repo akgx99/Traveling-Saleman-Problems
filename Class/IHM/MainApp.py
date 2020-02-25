@@ -1,5 +1,5 @@
-import Class.CitiesManager as CitiesManager
-import Class.Logic as Logic
+import Class.Logic.CitiesManager as CitiesManager
+import Class.Logic.Algo as Algo
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
 
@@ -48,7 +48,7 @@ class Application(tk.Frame):
         self.manager.addCities(file) # ajouter des villes a partir d"un fichier
 
         if(len(self.manager.cities) > 0): # si plus d'une ville existe
-            self.algo = Logic.Logic(self.manager.cities, self.manager.cities[0]) # définit les villes comme sommets et un sommet de départ
+            self.algo = Algo.Algo(self.manager.cities, self.manager.cities[0]) # définit les villes comme sommets et un sommet de départ
 
             if self._chosenAlgo != None:
                 if self._chosenAlgo == "IncreasingTour":
