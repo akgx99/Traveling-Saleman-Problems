@@ -48,13 +48,9 @@ class Logic():
     def get_start(self):
         return self._start
     def get_costs(self):
-        return self._costs
+        return "Le coût est de "+str(self._costs)+" km"
     
     """ Property """
     start = property(get_start)
     vectors = property(get_vectors)
     costs = property(get_costs)
-
-    """ ToString """
-    def __str__(self):
-        return "Le coût est de "+str(self._costs)+" km"
