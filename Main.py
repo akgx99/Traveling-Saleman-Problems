@@ -1,9 +1,9 @@
-import Application
+import Class.Application as App
 import tkinter as Tk
 
 def main():
    root = Tk.Tk()
-   app = Application.Application(master=root)
+   app = App.Application(master=root)
    app.mainloop()
 
 if __name__ == "__main__":

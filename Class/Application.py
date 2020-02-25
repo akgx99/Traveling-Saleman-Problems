@@ -1,5 +1,5 @@
-import CitiesManager
-import Logic
+import Class.CitiesManager as CitiesManager
+import Class.Logic as Logic
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
 

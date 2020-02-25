@@ -1,5 +1,5 @@
-import Parser as parse
-import City
+import Class.Parser as parse
+import Class.City as City
 
 class CitiesManager():
     """ Classe servant à gérer les villes à visiter. elle contient :
