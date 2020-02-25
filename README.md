@@ -25,8 +25,9 @@ def main():
    manager.addCities() # ajouter des villes a partir d"un fichier
 
    if(len(manager.cities) > 0): # si plus d'une ville existe
-
-      algo = Logic.Logic(manager.cities, manager.cities[0]) # définit les villes comme sommets et un sommet de départ
+      
+      # définit les villes comme sommets et un sommet de départ
+      algo = Logic.Logic(manager.cities, manager.cities[0]) 
       algo.increasingTour() # lance l'algoo de parcours IncreasingTour
 
       manager.displayCities() # Affiche les villes qui ont été visité ou non
