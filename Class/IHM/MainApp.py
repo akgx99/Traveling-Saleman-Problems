@@ -3,13 +3,17 @@ import Class.Logic.Algo as Algo
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
 
-class Application(tk.Frame):
+class MainApp(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master
         self.master.title("TP - RO") # titre de la fenêtre
-        self.master.geometry("300x500") # taille de la fenêtre
+        self.master.geometry("300x450") # taille de la fenêtre
         self.pack()
+
+        # affichage du coût
+        self._displayCosts = tk.Label(self, text="Aucun algorithme choisi...")
+        self._displayCosts.pack(side="bottom")
 
         # algo a utiliser
         self._chosenAlgo = None

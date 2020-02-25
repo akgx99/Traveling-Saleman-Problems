@@ -3,7 +3,7 @@ import tkinter as Tk
 
 def main():
    root = Tk.Tk()
-   app = App.Application(master=root)
+   app = App.MainApp(master=root)
    app.mainloop()
 
 if __name__ == "__main__":
