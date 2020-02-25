@@ -65,3 +65,4 @@ A l'heure actuelle le projet comporte :
 
 - Un algo de tournée croissante (par numéro de ville)
 - Une interface console (CLI)
+- Une interface graphique (GUI)
