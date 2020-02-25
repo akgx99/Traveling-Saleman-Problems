@@ -10,7 +10,7 @@ de DUT informatique.
 
 - Un environnement prolog (https://www.swi-prolog.org/)
 - Python3 (https://www.python.org/download/releases/3.0/)
-La librairie Python PySwip (https://docs.python.org/fr/3/library/tkinter.html)
+- La librairie Python Tkinter (https://docs.python.org/fr/3/library/tkinter.html)
 
 ## Quick start
 
