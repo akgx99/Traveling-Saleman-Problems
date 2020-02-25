@@ -13,16 +13,14 @@ class MainApp(tk.Frame):
 
         # affichage du coût
         self._displayCosts = tk.Label(self, text="Aucun algorithme choisi...")
-        self._displayCosts.pack(side="bottom")
+        self._displayCosts.pack(side="top")
 
         # algo a utiliser
         self._chosenAlgo = None
-        self._labelAlgo = tk.Label(self, text="Algo :")
-        self._labelAlgo.pack(side="top")
 
         # boutton algo 1 : Tournéé croissante
         self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="darkgray", fg="black", activebackground="lightgray")
-        self._buttonAlgo1.pack(side="top")
+        self._buttonAlgo1.pack(side="bottom")
 
         # affichage la liste des villes visitées
         self._displayRes = tk.Listbox(self, width=30, height=20)
