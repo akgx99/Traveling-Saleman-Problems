@@ -8,10 +8,10 @@ class Algo():
     - un cout (coût du déplacement)
     """
 
-    def __init__(self, vectors, start):
+    def __init__(self, vertex, start):
         """ Construteur de la classe logic """
         self._visited = []
-        self._vectors = vectors
+        self._vertex = vertex
         self._start = start
         self._costs = 0.00
 
@@ -36,15 +36,31 @@ class Algo():
 
     def increasingTour(self):
         """ Algo de parcours des villes une à une par odre croissant de leur position """
-        for current in self._vectors:
+        for current in self._vertex:
             self._visited.append(current)
-            next = self._vectors[+1]
+            next = self._vertex[+1]
 
             self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
             
+    def randomTour(self):
+        """ Algo de parcours aléatoire des villes à visiter """
+
+        # Initialisation V(0) à V(1)
+        rand = rnd.randrange(1, len(self._vertex))
+        self._visited.append(self._start)
+
+        v1 = self._vertex[rand] #V(1) est chosi au hasard
+        self._visited.append(v1)
+
+        self._costs += self.distanceInKm(self._start.latitude, self._start.longitude, v1.latitude, v1.longitude)
+
+        #le reste des sommets à visiter
+        while len(self._visited) != len(self._vertex):
+            pass
+
     """ Getter & Setter """
-    def get_vectors(self):
-        return self._vectors
+    def get_vertex(self):
+        return self._vertex
     def get_start(self):
         return self._start
     def get_costs(self):
@@ -53,6 +69,6 @@ class Algo():
         return self._visited    
     """ Property """
     start = property(get_start)
-    vectors = property(get_vectors)
+    vertex = property(get_vertex)
     costs = property(get_costs)
     visited = property(get_visited)
