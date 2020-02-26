@@ -44,20 +44,27 @@ class Algo():
             
     def randomTour(self):
         """ Algo de parcours aléatoire des villes à visiter """
+        current = self._start
+        self.visited.append(current)
 
-        # Initialisation V(0) à V(1)
-        rand = rnd.randrange(1, len(self._vertex))
-        self._visited.append(self._start)
+        cityOne = rnd.randrange(1, len(self._vertex)) # numéro ville 1 au hasard
+        next = self._vertex[cityOne]
+        self.visited.append(next)
 
-        v1 = self._vertex[rand] #V(1) est chosi au hasard
-        self._visited.append(v1)
+        while next is not self._vertex[len(self._vertex)- 1]:
+            randX = rnd.randrange(1, len(self._vertex)) # numéro ville X au hasard
+            randY = rnd.randrange(1, len(self._vertex)) # numéro ville Y au hasard
+            
+            current = self._vertex[randX]
+            self.visited.append(current)
 
-        self._costs += self.distanceInKm(self._start.latitude, self._start.longitude, v1.latitude, v1.longitude)
+            next = self._vertex[randY]
+            self.visited.append(next)
 
-        #le reste des sommets à visiter
-        while len(self._visited) != len(self._vertex):
-            pass
+            self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
 
+        self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
+            
     """ Getter & Setter """
     def get_vertex(self):
         return self._vertex
