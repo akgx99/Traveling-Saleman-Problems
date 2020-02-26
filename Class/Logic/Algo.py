@@ -10,6 +10,7 @@ class Algo():
 
     def __init__(self, vectors, start):
         """ Construteur de la classe logic """
+        self._visited = []
         self._vectors = vectors
         self._start = start
         self._costs = 0.00
@@ -35,10 +36,8 @@ class Algo():
 
     def increasingTour(self):
         """ Algo de parcours des villes une à une par odre croissant de leur position """
-        self.start._visited = True
-
         for current in self._vectors:
-            current.visited = True
+            self._visited.append(current)
             next = self._vectors[+1]
 
             self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
@@ -50,8 +49,10 @@ class Algo():
         return self._start
     def get_costs(self):
         return "Le coût est de "+str(self._costs)+" km"
-    
+    def get_visited(self):
+        return self._visited    
     """ Property """
     start = property(get_start)
     vectors = property(get_vectors)
     costs = property(get_costs)
+    visited = property(get_visited)

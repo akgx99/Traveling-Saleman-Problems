@@ -13,7 +13,6 @@ class City:
         self._name = name
         self._latitude = latitude
         self._longitude = longitude
-        self._visited = False
     
     """ Getter & Setter """
     def get_id(self):
@@ -24,20 +23,9 @@ class City:
         return self._latitude
     def get_longitude(self):
         return self._longitude
-    def get_visited(self):
-        return self._visited
-    
-    def set_visited(self, visited):
-        self._visited = visited
-
+   
     """ Property """
     id = property(get_id)
     name = property(get_name)
     latitude = property(get_latitude)
     longitude = property(get_longitude)
-    visited = property(get_visited, set_visited)
-
-    """ ToString """
-    def __str__(self):
-        if(self._visited):
-            return "La ville "+str(self.id)+" a été visité"
