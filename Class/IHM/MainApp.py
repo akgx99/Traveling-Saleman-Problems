@@ -23,6 +23,10 @@ class MainApp(tk.Frame):
         self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
         self._buttonAlgo1.pack(side="bottom",  pady="10")
 
+        # boutton algo 1 : Tournéé croissante
+        self._buttonAlgo1 = tk.Button(self, text="Au hasard", command=lambda name="RandomTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
+        self._buttonAlgo1.pack(side="bottom",  pady="10")
+
         # affichage la liste des villes visitées
         self._displayRes = tk.Listbox(self, width=30, height=20)
         self._displayRes.pack(side="left", fill="y")
@@ -58,6 +62,8 @@ class MainApp(tk.Frame):
             if self._chosenAlgo != None:
                 if self._chosenAlgo == "IncreasingTour":
                     self.algo.increasingTour() # lance l'algo de parcours IncreasingTour
+                elif self._chosenAlgo == "RandomTour":
+                    self.algo.randomTour() # lance l'algo de parcours RandomTour
                     
                 self.viewRes() # affiche les résultat dans la liste
                 self.viewCosts() # affiche le coût de l'algo
@@ -69,7 +75,8 @@ class MainApp(tk.Frame):
     def viewRes(self):
         """ Affiche les villes visitées dans la liste """
         for i in range(0, len(self.manager.cities)):
-            self._displayRes.insert(i, self.manager.cities[i])
+           if self.manager.cities[i].visited:
+               self._displayRes.insert(i, self.manager.cities[i])
     
     def viewCosts(self):
         self._displayCosts['text'] = self.algo.costs
