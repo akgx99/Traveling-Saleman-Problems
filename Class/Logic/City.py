@@ -26,13 +26,16 @@ class City:
         return self._longitude
     def get_visited(self):
         return self._visited
+    
+    def set_visited(self, visited):
+        self._visited = visited
 
     """ Property """
     id = property(get_id)
     name = property(get_name)
     latitude = property(get_latitude)
     longitude = property(get_longitude)
-    visited = property(get_visited)
+    visited = property(get_visited, set_visited)
 
     """ ToString """
     def __str__(self):

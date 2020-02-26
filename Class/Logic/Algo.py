@@ -1,4 +1,5 @@
 from math import sqrt, pi, sin, cos,radians, atan2
+import random as rnd
 
 class Algo():
     """ Classe contenant les différents algorithmes du plus court chemin. Elle contient :
@@ -37,7 +38,7 @@ class Algo():
         self.start._visited = True
 
         for current in self._vectors:
-            current._visited = True
+            current.visited = True
             next = self._vectors[+1]
 
             self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
