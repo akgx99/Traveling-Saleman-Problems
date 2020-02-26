@@ -5,28 +5,29 @@ from tkinter.filedialog import askopenfilename
 
 class MainApp(tk.Frame):
     def __init__(self, master=None):
-        super().__init__(master)
+        super().__init__(master, bg="alice blue")
         self.master = master
         self.master.title("TP - RO") # titre de la fenêtre
-        self.master.geometry("300x450") # taille de la fenêtre
+        self.master.geometry("400x500")
+        self.master['bg'] = "alice blue"
         self.pack()
 
         # affichage du coût
-        self._displayCosts = tk.Label(self, text="Aucun algorithme choisi...")
-        self._displayCosts.pack(side="top")
+        self._displayCosts = tk.Label(self, bg="alice blue", text="Aucun algorithme choisi...")
+        self._displayCosts.pack(side="top", pady="10")
 
         # algo a utiliser
         self._chosenAlgo = None
 
         # boutton algo 1 : Tournéé croissante
-        self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="darkgray", fg="black", activebackground="lightgray")
-        self._buttonAlgo1.pack(side="bottom")
+        self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
+        self._buttonAlgo1.pack(side="bottom",  pady="10")
 
         # affichage la liste des villes visitées
         self._displayRes = tk.Listbox(self, width=30, height=20)
         self._displayRes.pack(side="left", fill="y")
         
-        scrollBar = tk.Scrollbar(self, orient="vertical")
+        scrollBar = tk.Scrollbar(self, bg="alice blue", orient="vertical")
         scrollBar.config(command=self._displayRes.yview)
         scrollBar.pack(side="right", fill="y")
         
