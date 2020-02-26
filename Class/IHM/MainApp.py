@@ -44,12 +44,15 @@ class MainApp(tk.Frame):
 
     def openFile(self):
         """ Ouvre un fichier avec une interface graphique pour choisir le fichier """
-        self.filePath = askopenfilename(filetypes =(("TSP File", "*.tsp"),("TSP File","*.TSP")), title = "Choose a TSP file") # ouvre une fenêtre de choix de fichier .tsp ou .TSP
-        self.clearList()
+        try:
+            self.filePath = askopenfilename(filetypes =(("TSP File", "*.tsp"),("TSP File","*.TSP")), title = "Choose a TSP file") # ouvre une fenêtre de choix de fichier .tsp ou .TSP
+            self.clearList()
 
-        if(self.filePath != ""):
-            if self._chosenAlgo != None:
-                self.process(self.filePath, self._chosenAlgo)     
+            if(self.filePath != ""):
+                if self._chosenAlgo != None:
+                    self.process(self.filePath, self._chosenAlgo)   
+        except:
+           print('Error : please select a file')  
 
     def process(self, file, algo):
         """ Fait le lien entre l'interface graphique et la couche métier """
