@@ -47,17 +47,15 @@ class Algo():
         current = self._start
         self.visited.append(current)
 
-        while current is not self._vertex[len(self._vertex)- 1]:
-            randX = rnd.randrange(1, len(self._vertex)) # numéro ville X au hasard
-            randY = rnd.randrange(1, len(self._vertex)) # numéro ville Y au hasard
+        while len(self._visited) < len(self._vertex):
+            rand = rnd.randrange(1, len(self._vertex)) # numéro ville au hasard
             
-            next = self._vertex[randY]
-            self.visited.append(next)
+            next = self._vertex[rand]
 
-            self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
-
-            current = self._vertex[randX]
-            self.visited.append(current)            
+            if next not in self._visited:
+                self.visited.append(next)
+                self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
+                current = next          
             
     """ Getter & Setter """
     def get_vertex(self):
