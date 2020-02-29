@@ -49,7 +49,7 @@ Le programme pour fonctionner à besoin d'un fichier, renseignez un des fichiers
 villes.tsp, villes2.tsp, villes5.tsp
 ```
 
-Une fois exécuté le programme vous proposera une sortie comme celle-ci :
+Une fois exécuté le programme vous proposera un jeu de données comme celle-ci :
 
 ```
 La ville 1 a été visité
@@ -64,5 +64,6 @@ Pour aller plus loin se référer à la documentation technique (pas encore disp
 A l'heure actuelle le projet comporte :
 
 - Un algo de tournée croissante (par numéro de ville)
+- Un algo de tournée au hasard
 - Une interface console (CLI)
 - Une interface graphique (GUI)
