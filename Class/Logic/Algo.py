@@ -32,7 +32,7 @@ class Algo():
         dist = 2 * atan2(sqrt(calc), sqrt(1-calc))
         out = (EARTH_RADIUS * dist) / 1000
 
-        return round(out, 2)
+        return round(out, 3)
 
     def increasingTour(self):
         """ Algo de parcours des villes une à une par odre croissant de leur position """
