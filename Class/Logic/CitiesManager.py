@@ -12,12 +12,17 @@ class CitiesManager():
     
     def addCity(self, city):
         """ Permet d'ajouter une ville à la liste 
-        - city : la ville à ajouter
+        param :
+            city : la ville à ajouter
         """
         self._cities.append(city)
 
     def addCities(self, file):
-        """ Permet depuis un fichier (définit par l'utilisateur) d'ajouter un ensemble de ville """
+        """ Permet depuis un fichier (définit par l'utilisateur) d'ajouter un ensemble de ville 
+        
+        param :
+            file : le fichier à parcourir
+        """
         FileParser = parse.Parser()
         FileParser.extractContents(file)
         for x in FileParser.data:

@@ -11,7 +11,10 @@ class Parser():
         self._data = []
 
     def extractContents(self, file):
-        """ Permet d'extraire ligne par ligne sous forme de liste les données """
+        """ Permet d'extraire ligne par ligne sous forme de liste les données 
+        param: 
+            file : le fichier à parcourir
+        """
         try:
             self._file = open(file, 'r')
         except IOError:

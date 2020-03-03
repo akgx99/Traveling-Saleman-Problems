@@ -9,14 +9,23 @@ class Algo():
     """
 
     def __init__(self, vertex, start):
-        """ Construteur de la classe logic """
+        """ Construteur de la classe logic 
+        param:
+            vertex : les sommets à visiter
+            start : le sommet de départ
+        """
         self._visited = []
         self._vertex = vertex
         self._start = start
         self._costs = 0.00
 
     def distanceInKm(self, latitude1, longitude1, latitude2, longitude2):
-        """ Calcul de la distance en mètre en prennant en compte que la terre est sphérique """
+        """ Calcul de la distance en mètre en prennant en compte que la terre est sphérique 
+        param :
+
+        latitude1, longitude1 : latitude et longitude de départ
+        latitude2, longitude2 : latitude et longitude d'arrivée
+        """
         EARTH_RADIUS = 6378137; # Terre -> shpère de 6378km de rayon
         
         #degres to radian
@@ -52,10 +61,10 @@ class Algo():
             
             next = self._vertex[rand]
 
-            if next not in self._visited:
+            if next not in self._visited: # si la ville suivante n'a pas déjà été visitée
                 self.visited.append(next)
                 self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
-                current = next          
+                current = next # la ville d'arrivée depuis la ville de départ une fois visitée        
             
     """ Getter & Setter """
     def get_vertex(self):
@@ -65,7 +74,8 @@ class Algo():
     def get_costs(self):
         return "Le coût est de "+str(self._costs)+" km"
     def get_visited(self):
-        return self._visited    
+        return self._visited
+            
     """ Property """
     start = property(get_start)
     vertex = property(get_vertex)

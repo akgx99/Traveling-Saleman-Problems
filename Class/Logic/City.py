@@ -8,7 +8,13 @@ class City:
     """
     
     def __init__(self, id, name, latitude, longitude):
-        """ Constructeur de la classe City"""
+        """ Constructeur de la classe City
+        param :
+            id
+            name : nom de la ville
+            latitude
+            longitude
+        """
         self._id = id
         self._name = name
         self._latitude = latitude
