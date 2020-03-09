@@ -36,7 +36,6 @@ def distEarthRadius(start, destination):
 
 def dist(start, destination):
     """ Calcul de la distance entre deux villes (avec le théorème de Pythagore)
-
     param :
     
     start : la ville de départ
