@@ -29,12 +29,7 @@ class CitiesManager():
             ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenus dans chaque jeu de données
             city = City.City(int(ele[0]), "None", float(ele[1]), float(ele[2])) # construteur de la ville avec les éléments précédents
             self._cities.append(city)
-
-    def displayCities(self):
-        """ Permet d'afficher les informations des villes """
-        for city in self._cities:
-                print(city)
-
+            
     """ Getter & Setter """
     def get_cities(self):
         return self._cities
