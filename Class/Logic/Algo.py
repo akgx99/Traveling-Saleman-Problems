@@ -1,5 +1,6 @@
-from math import sqrt, pi, sin, cos,radians, atan2
+from math import sqrt, pi, sin, cos, radians, atan2
 import random as rnd
+import Class.Logic.Calculus as calc
 
 class Algo():
     """ Classe contenant les différents algorithmes du plus court chemin. Elle contient :
@@ -19,37 +20,13 @@ class Algo():
         self._start = start
         self._costs = 0.00
 
-    def distanceInKm(self, latitude1, longitude1, latitude2, longitude2):
-        """ Calcul de la distance en mètre en prenant en compte que la terre est sphérique 
-        param :
-
-        latitude1, longitude1 : latitude et longitude de départ
-        latitude2, longitude2 : latitude et longitude d'arrivée
-        """
-        EARTH_RADIUS = 6378137 # Terre -> sphère de 6378km de rayon
-        
-        #degres to radian
-        rLat1 = latitude1*(pi/180)  
-        rLon1 = longitude1*(pi/180)
-        rLon2 = longitude2*(pi/180)
-        rLat2 = latitude2*(pi/180)
-        degresLo = (rLon2 - rLon1)  / 2
-        degresLa = (rLat2 - rLat1)  / 2
-
-        #calcul
-        calc = (sin(degresLa) ** 2) + cos(rLat1) * cos(rLat2) * (sin(degresLo) ** 2)
-        dist = 2 * atan2(sqrt(calc), sqrt(1-calc))
-        out = (EARTH_RADIUS * dist) / 1000
-
-        return round(out, 3)
-
     def increasingTour(self):
         """ Algo de parcours des villes une à une par ordre croissant de leur position """
         for current in self._vertex:
             self._visited.append(current)
             next = self._vertex[+1]
 
-            self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
+            self._costs += calc.distEarthRadius(current, next)
             
     def randomTour(self):
         """ Algo de parcours aléatoire des villes à visiter """
@@ -63,7 +40,7 @@ class Algo():
 
             if next not in self._visited: # si la ville suivante n'a pas déjà été visitée
                 self.visited.append(next)
-                self._costs += self.distanceInKm(current.latitude, current.longitude, next.latitude, next.longitude)
+                self._costs += calc.distEarthRadius(current, next)
                 current = next # la ville d'arrivée depuis la ville de départ une fois visitée        
             
     """ Getter & Setter """
