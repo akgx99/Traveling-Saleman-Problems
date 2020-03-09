@@ -42,7 +42,7 @@ def dist(start, destination):
     start : la ville de départ
     destination : la ville d'arrivée
     """
-    return sqrt( (destination.longitude - start.longitude) ** 2 + (destination.latitude - start.latitude) ** 2) * 100 
+    return sqrt( (destination.longitude - start.longitude) ** 2 + (destination.latitude - start.latitude) ** 2) * 100 # application du théorème de Pythagore + conversion en km
 
 def truncate(nb, decimals=0):
     """ Permet de tronquer un nombre 
