@@ -5,7 +5,7 @@ class Algo():
     """ Classe contenant les différents algorithmes du plus court chemin. Elle contient :
     - Une liste des sommets
     - Un sommet de départ
-    - un cout (coût du déplacement)
+    - un coût (coût du déplacement)
     """
 
     def __init__(self, vertex, start):
@@ -20,13 +20,13 @@ class Algo():
         self._costs = 0.00
 
     def distanceInKm(self, latitude1, longitude1, latitude2, longitude2):
-        """ Calcul de la distance en mètre en prennant en compte que la terre est sphérique 
+        """ Calcul de la distance en mètre en prenant en compte que la terre est sphérique 
         param :
 
         latitude1, longitude1 : latitude et longitude de départ
         latitude2, longitude2 : latitude et longitude d'arrivée
         """
-        EARTH_RADIUS = 6378137; # Terre -> shpère de 6378km de rayon
+        EARTH_RADIUS = 6378137 # Terre -> sphère de 6378km de rayon
         
         #degres to radian
         rLat1 = latitude1*(pi/180)  
@@ -44,7 +44,7 @@ class Algo():
         return round(out, 3)
 
     def increasingTour(self):
-        """ Algo de parcours des villes une à une par odre croissant de leur position """
+        """ Algo de parcours des villes une à une par ordre croissant de leur position """
         for current in self._vertex:
             self._visited.append(current)
             next = self._vertex[+1]
