@@ -19,21 +19,23 @@ de DUT informatique.
 Dans un fichier ou directement depuis la console python exécutez le code suivant :
 
 ```python
-import CitiesManager
-import Logic
+import Class.Logic.CitiesManager as CitiesManager
+import Class.Logic.Algo as Algo
 
 def main():
    manager = CitiesManager.CitiesManager() # construteur du CitiesManager
-   manager.addCities("fileName") # ajouter des villes a partir d"un fichier
+   manager.addCities("data/villes2.tsp") # ajouter des villes a partir d"un fichier
 
    if(len(manager.cities) > 0): # si plus d'une ville existe
       
       # définit les villes comme sommets et un sommet de départ
-      algo = Logic.Logic(manager.cities, manager.cities[0]) 
-      algo.increasingTour() # lance l'algoo de parcours IncreasingTour
+      algo = Algo.Algo(manager.cities, manager.cities[0]) 
+      algo.increasingTour() # lance l'algo de parcours IncreasingTour
 
-      manager.displayCities() # Affiche les villes qui ont été visité ou non
-      print(algo.costs) # affiche le côut
+      for city in manager.cities: # affiche les villes visitées
+             print("la ville "+str(city.id)+" a été visité")
+
+      print(algo.costs) # affiche le coût
 
 if __name__ == "__main__":
    main()
