@@ -1,10 +1,9 @@
-# Traveling Saleman Problems
+# Traveling Salesman Problems
 
 ## Introduction
 
 Il s'agit d"un projet permettant de tester les applications d'algorithmes du plus court chemin 
-dans le cadre du cours de recherche opérationnelle
-de DUT informatique.
+dans le cadre du cours de recherche opérationnelle de DUT informatique.
 
 ## Dépendances 
 
@@ -14,7 +13,15 @@ de DUT informatique.
 
 ## Quick start
 
-### CLI
+### Préambule 
+
+Le programme à besoin d'un fichier, renseignez un des fichiers suivants (ou créer le votre) :
+
+```
+villes.tsp, villes2.tsp, villes5.tsp
+```
+
+### programme en CLI
 
 Dans un fichier ou directement depuis la console python exécutez le code suivant :
 
@@ -23,7 +30,7 @@ import Class.Logic.CitiesManager as CitiesManager
 import Class.Logic.Algo as Algo
 
 def main():
-   manager = CitiesManager.CitiesManager() # construteur du CitiesManager
+   manager = CitiesManager.CitiesManager() # constructeur du CitiesManager
    manager.addCities("data/villes2.tsp") # ajouter des villes a partir d"un fichier
 
    if(len(manager.cities) > 0): # si plus d'une ville existe
@@ -41,25 +48,22 @@ if __name__ == "__main__":
    main()
 ```
 
-### GUI
+#### Résulats
 
-Lancer le fichier ```main.py```
-
-Le programme pour fonctionner à besoin d'un fichier, renseignez un des fichiers suivants (ou créer le votre) :
-
-```
-villes.tsp, villes2.tsp, villes5.tsp
-```
-
-Une fois exécuté le programme vous proposera un jeu de données comme celle-ci :
+Une fois exécuté le programme vous proposera un jeu de données comme celle-ci  :
 
 ```
 La ville 1 a été visité
 La ville 2 a été visité
-Le coût est de 17.73 km
+Le coût est de 17.726 km
 ```
 
 Pour aller plus loin se référer à la documentation technique (pas encore disponible)
+
+
+### Programme avec GUI
+
+Lancer le fichier ```main.py```
 
 ## Notes
 
