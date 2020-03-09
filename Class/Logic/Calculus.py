@@ -34,6 +34,16 @@ def distEarthRadius(start, destination):
         res = distanceInKm(start.latitude, start.longitude, destination.latitude, destination.longitude)
         return truncate(res, 3)
 
+def dist(start, destination):
+    """ Calcul de la distance entre deux villes (avec le théorème de Pythagore)
+
+    param :
+    
+    start : la ville de départ
+    destination : la ville d'arrivée
+    """
+    return sqrt( (destination.longitude - start.longitude) ** 2 + (destination.latitude - start.latitude) ** 2) * 100 
+
 def truncate(nb, decimals=0):
     """ Permet de tronquer un nombre 
     param :
