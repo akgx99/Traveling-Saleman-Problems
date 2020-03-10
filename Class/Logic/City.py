@@ -1,19 +1,18 @@
 class City:
     """ Classe Définissant une ville par :
     - Son numéro (int)
-    - Son nom (string)
     - Sa latitude (float)
     - Sa longitude (float)
-    - Son état (visité ou non)
+    - Son nom (string)
     """
     
-    def __init__(self, id, name, latitude, longitude):
+    def __init__(self, id, latitude, longitude, name='None'):
         """ Constructeur de la classe City
         param :
             id
-            name : nom de la ville
             latitude
             longitude
+            name : nom de la ville
         """
         self._id = id
         self._name = name

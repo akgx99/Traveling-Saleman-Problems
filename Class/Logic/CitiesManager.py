@@ -27,7 +27,7 @@ class CitiesManager():
         FileParser.extractContents(file)
         for x in FileParser.data:
             ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenus dans chaque jeu de données
-            city = City.City(int(ele[0]), "None", float(ele[1]), float(ele[2])) # construteur de la ville avec les éléments précédents
+            city = City.City(int(ele[0]), float(ele[1]), float(ele[2])) # construteur de la ville avec les éléments précédents
             self._cities.append(city)
             
     """ Getter & Setter """
