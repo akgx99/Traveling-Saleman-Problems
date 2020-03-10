@@ -23,7 +23,7 @@ class MainApp(tk.Frame):
         self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
         self._buttonAlgo1.pack(side="bottom",  pady="10")
 
-        # boutton algo 1 : Tournéé croissante
+        # boutton algo 2 : Tournéé random
         self._buttonAlgo1 = tk.Button(self, text="Au hasard", command=lambda name="RandomTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
         self._buttonAlgo1.pack(side="bottom",  pady="10")
 
@@ -80,7 +80,6 @@ class MainApp(tk.Frame):
         for i in range(0, len(self.algo.visited)):
             out = "La ville "+str(self.algo.visited[i].id)+" a été visité"
             self._displayRes.insert(i, out)
-           
             
     def viewCosts(self):
         self._displayCosts['text'] = self.algo.costs
