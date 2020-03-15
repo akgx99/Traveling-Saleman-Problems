@@ -26,8 +26,8 @@ class Algo():
             self._visited.append(current)
             next = self._vertex[+1]
 
-            self._costs += calc.distEarthRadius(current, next)
-            
+            self._costs += calc.dist(current, next)
+
     def randomTour(self):
         """ Algo de parcours aléatoire des villes à visiter """
         current = self._start
@@ -40,8 +40,9 @@ class Algo():
 
             if next not in self._visited: # si la ville suivante n'a pas déjà été visitée
                 self.visited.append(next)
-                self._costs += calc.distEarthRadius(current, next)
-                current = next # la ville d'arrivée depuis la ville de départ une fois visitée        
+                self._costs += calc.dist(current, next)
+                current = next # la ville d'arrivée depuis la ville de départ une fois visitée
+
     def findNearestNeighbor(self, city):
         """ Algo qui permet de trouver le plus proche de voisin d'une ville
 
