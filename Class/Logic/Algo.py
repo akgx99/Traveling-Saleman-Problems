@@ -58,6 +58,18 @@ class Algo():
                     min = calc.dist(city, next) 
                     res = next
         return res
+
+    def closeNeighbor(self):
+        current = self._start
+        self.visited.append(current)
+
+        while len(self._visited) < len(self._vertex):
+            next = self.findNearestNeighbor(current) # la suivante est la ville la plus proche
+            self.visited.append(next) # la ville suivante à été visitée
+            self._costs += calc.dist(current, next)
+            current = next # la ville d'arrivée depuis la ville de départ une fois visitée
+
+
     """ Getter & Setter """
     def get_vertex(self):
         return self._vertex
