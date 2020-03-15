@@ -20,12 +20,16 @@ class MainApp(tk.Frame):
         self._chosenAlgo = None
 
         # boutton algo 1 : Tournéé croissante
-        self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
-        self._buttonAlgo1.pack(side="bottom",  pady="10")
+        #self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
+        #self._buttonAlgo1.pack(side="bottom",  pady="10")
 
         # boutton algo 2 : Tournéé random
-        self._buttonAlgo1 = tk.Button(self, text="Au hasard", command=lambda name="RandomTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
-        self._buttonAlgo1.pack(side="bottom",  pady="10")
+        self._buttonAlgo2 = tk.Button(self, text="Au hasard", command=lambda name="RandomTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
+        self._buttonAlgo2.pack(side="bottom",  pady="10")
+
+         # boutton algo 2 : Tournéé random
+        self._buttonAlgo3 = tk.Button(self, text="Proche voisin", command=lambda name="closeNeighbor":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
+        self._buttonAlgo3.pack(side="bottom",  pady="10")
 
         # affichage la liste des villes visitées
         self._displayRes = tk.Listbox(self, width=30, height=20)
@@ -67,6 +71,8 @@ class MainApp(tk.Frame):
                     self.algo.increasingTour() # lance l'algo de parcours IncreasingTour
                 elif self._chosenAlgo == "RandomTour":
                     self.algo.randomTour() # lance l'algo de parcours RandomTour
+                elif self._chosenAlgo == "closeNeighbor":
+                    self.algo.closeNeighbor() # lance l'algo de parcours closeNeighbor
                     
                 self.viewRes() # affiche les résultat dans la liste
                 self.viewCosts() # affiche le coût de l'algo
