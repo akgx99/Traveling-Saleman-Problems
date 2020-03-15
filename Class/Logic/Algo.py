@@ -42,7 +42,22 @@ class Algo():
                 self.visited.append(next)
                 self._costs += calc.distEarthRadius(current, next)
                 current = next # la ville d'arrivée depuis la ville de départ une fois visitée        
-            
+    def findNearestNeighbor(self, city):
+        """ Algo qui permet de trouver le plus proche de voisin d'une ville
+
+        city : la depuis laquelle on doit trouver le plus proche voisin
+
+        return : La ville la plus proche
+        """
+        min = float("inf") # nombre infini 
+
+        for next in self._vertex:
+            if next not in self._visited: # si la ville n'a pas été visitée
+                if calc.dist(city, next) < min: # si la distance est inférieur à la plus petite distance précédente
+                    # alors elle devient la ville la plus proche
+                    min = calc.dist(city, next) 
+                    res = next
+        return res
     """ Getter & Setter """
     def get_vertex(self):
         return self._vertex
