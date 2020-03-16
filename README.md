@@ -71,5 +71,6 @@ A l'heure actuelle le projet comporte :
 
 - Un algo de tournée croissante (par numéro de ville)
 - Un algo de tournée au hasard
+- Un algo du plus proche voisin
 - Une interface console (CLI)
 - Une interface graphique (GUI)
