@@ -10,7 +10,7 @@ class Algo():
     """
 
     def __init__(self, vertex, start):
-        """ Construteur de la classe logic 
+        """ Constructeur de la classe Algo 
         param:
             vertex : les sommets à visiter
             start : le sommet de départ
