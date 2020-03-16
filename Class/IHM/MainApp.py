@@ -19,9 +19,9 @@ class MainApp(tk.Frame):
         # algo a utiliser
         self._chosenAlgo = None
 
-        # boutton algo 1 : Tournéé croissante
-        #self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
-        #self._buttonAlgo1.pack(side="bottom",  pady="10")
+        #boutton algo 1 : Tournéé croissante
+        self._buttonAlgo1 = tk.Button(self, text="Tournée Croissante", command=lambda name="IncreasingTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
+        self._buttonAlgo1.pack(side="bottom",  pady="10")
 
         # boutton algo 2 : Tournéé random
         self._buttonAlgo2 = tk.Button(self, text="Au hasard", command=lambda name="RandomTour":self.LaunchAlgorithm(name), width=15, height=1, bg="dodger blue", fg="light cyan", activebackground="lightgray")
