@@ -9,6 +9,7 @@ class Parser():
     def __init__(self):
         self._file = None
         self._data = []
+        self._name = []
 
     def extractContents(self, file):
         """ Permet d'extraire ligne par ligne sous forme de liste les données 
@@ -25,9 +26,25 @@ class Parser():
                     self._data.append(line)
             self._file.close()
 
+    def extractName(self):
+        """Permet d'extraire le noms des villes """
+        try:
+            self._file = open('data/noms.csv', 'r')
+        except IOError:
+            print('Cannot open: ', self._file)
+        else:
+            with self._file as f:
+                for line in f:
+                    self._name.append(line)
+            self._file.close()
+
     """ Getter & Setter """
     def get_data(self):
         return self._data
 
+    def get_name(self):
+        return self._name
+
     """ Property """
     data = property(get_data)
+    name = property(get_name)

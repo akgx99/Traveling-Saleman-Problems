@@ -29,7 +29,14 @@ class CitiesManager():
             ele = x.split(" ", 3) # liste des éléments (id, latitude et longitude) contenus dans chaque jeu de données
             city = City.City(int(ele[0]), float(ele[1]), float(ele[2])) # construteur de la ville avec les éléments précédents
             self._cities.append(city)
-            
+
+            for i in range(0, len(self._cities)):
+                FileParser.extractName()
+                Names = FileParser.name
+                ele = Names[i].split(" ")
+                city.name = ele[1]
+
+  
     """ Getter & Setter """
     def get_cities(self):
         return self._cities

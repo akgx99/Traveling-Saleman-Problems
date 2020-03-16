@@ -28,9 +28,12 @@ class City:
         return self._latitude
     def get_longitude(self):
         return self._longitude
+
+    def set_name(self, name):
+        self._name = name
    
     """ Property """
     id = property(get_id)
-    name = property(get_name)
+    name = property(get_name, set_name)
     latitude = property(get_latitude)
     longitude = property(get_longitude)
