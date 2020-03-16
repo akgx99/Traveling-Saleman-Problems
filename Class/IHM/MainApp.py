@@ -84,7 +84,7 @@ class MainApp(tk.Frame):
     def viewRes(self):
         """ Affiche les villes visitées dans la liste """
         for i in range(0, len(self.algo.visited)):
-            out = "La ville "+str(self.algo.visited[i].id)+" a été visité"
+            out = str(self.algo.visited[i].name)+" ("+ str(self.algo.visited[i].id) +") a été visité"
             self._displayRes.insert(i, out)
             
     def viewCosts(self):
