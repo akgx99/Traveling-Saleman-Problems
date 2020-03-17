@@ -29,7 +29,7 @@ class Parser():
     def extractName(self):
         """Permet d'extraire le noms des villes """
         try:
-            self._file = open('data/noms.csv', 'r')
+            self._file = open('data/ville.txt', 'r')
         except IOError:
             print('Cannot open: ', self._file)
         else:

@@ -33,8 +33,8 @@ class CitiesManager():
             for i in range(0, len(self._cities)):
                 FileParser.extractName()
                 Names = FileParser.name
-                ele = Names[i].split(" ")
-                city.name = ele[1]
+                ele = Names[i].split(",")
+                city.name = ele[0]
 
   
     """ Getter & Setter """
