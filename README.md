@@ -7,7 +7,6 @@ dans le cadre du cours de recherche opérationnelle de DUT informatique.
 
 ## Dépendances 
 
-- Un environnement prolog (https://www.swi-prolog.org/)
 - Python3 (https://www.python.org/download/releases/3.0/)
 - La librairie Python Tkinter (https://docs.python.org/fr/3/library/tkinter.html)
 
