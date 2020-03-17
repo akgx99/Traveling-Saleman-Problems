@@ -18,31 +18,31 @@ class Algo():
         self._visited = []
         self._vertex = vertex
         self._start = start
-        self._costs = 0.00
+        self._costs = 0
+        self._cliDisplay = []
 
     def increasingTour(self):
         """ Algo de parcours des villes une à une par ordre croissant de leur position """
+        i = 0
         for current in self._vertex:
             self._visited.append(current)
-            next = self._vertex[+1]
-
-            self._costs += calc.dist(current, next)
+            self._cliDisplay.append(current.id)
+            if len(self._visited) < len(self._vertex):
+                next = self._vertex[i+1]
+                self._costs += calc.dist(current, next)
+                i= i+1
+            elif len(self._vertex) > 2:
+                next = self._start
+                self._costs += calc.dist(current, next)
+    
+        print(self._cliDisplay)
 
     def randomTour(self):
         """ Algo de parcours aléatoire des villes à visiter """
-        current = self._start
-        self.visited.append(current)
-
-        while len(self._visited) < len(self._vertex):
-            rand = rnd.randrange(1, len(self._vertex)) # numéro ville au hasard
-            
-            next = self._vertex[rand]
-
-            if next not in self._visited: # si la ville suivante n'a pas déjà été visitée
-                self.visited.append(next)
-                self._costs += calc.dist(current, next)
-                current = next # la ville d'arrivée depuis la ville de départ une fois visitée
-
+        
+        rnd.shuffle(self._vertex) # trie aléatoirement la liste de ville
+        self.increasingTour() # parcours la liste dans l'ordre aléatoire 
+        
     def findNearestNeighbor(self, city):
         """ Algo qui permet de trouver le plus proche de voisin d'une ville
 
@@ -68,8 +68,10 @@ class Algo():
             next = self.findNearestNeighbor(current) # la suivante est la ville la plus proche
             self.visited.append(next) # la ville suivante à été visitée
             self._costs += calc.dist(current, next)
+            self._cliDisplay.append(current.id)
             current = next # la ville d'arrivée depuis la ville de départ une fois visitée
 
+        print(self._cliDisplay)
 
     """ Getter & Setter """
     def get_vertex(self):
@@ -80,9 +82,12 @@ class Algo():
         return "Le coût est de "+str(self._costs)+" km"
     def get_visited(self):
         return self._visited
+    def get_getDisplay(self):
+        return self._visited
             
     """ Property """
     start = property(get_start)
     vertex = property(get_vertex)
+    cliDisplay = property(get_getDisplay)
     costs = property(get_costs)
     visited = property(get_visited)
