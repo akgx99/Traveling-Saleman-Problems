@@ -70,7 +70,7 @@ class Algo():
             self._costs += calc.dist(current, next)
             self._cliDisplay.append(current.id)
             current = next # la ville d'arrivée depuis la ville de départ une fois visitée
-
+        self._costs += calc.dist(current, self._start)
         print(self._cliDisplay)
 
     """ Getter & Setter """
