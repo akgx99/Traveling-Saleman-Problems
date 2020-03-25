@@ -1,4 +1,5 @@
 import Class.Logic.CitiesManager as CitiesManager
+import Class.Logic.Calculus as Calc
 import Class.Logic.Algo as Algo
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
@@ -48,15 +49,14 @@ class MainApp(tk.Frame):
 
     def openFile(self):
         """ Ouvre un fichier avec une interface graphique pour choisir le fichier """
-        try:
-            self.filePath = askopenfilename(filetypes =(("TSP File", "*.tsp"),("TSP File","*.TSP")), title = "Choose a TSP file") # ouvre une fenêtre de choix de fichier .tsp ou .TSP
-            self.clearList()
 
-            if(self.filePath != ""):
-                if self._chosenAlgo != None:
-                    self.process(self.filePath, self._chosenAlgo)   
-        except:
-           print('Error : please select a file')  
+        self.filePath = askopenfilename(filetypes =(("TSP File", "*.tsp"),("TSP File","*.TSP")), title = "Choose a TSP file") # ouvre une fenêtre de choix de fichier .tsp ou .TSP
+        self.clearList()
+
+        if(self.filePath != ""):
+            if self._chosenAlgo != None:
+                self.process(self.filePath, self._chosenAlgo)
+
 
     def process(self, file, algo):
         """ Fait le lien entre l'interface graphique et la couche métier """
@@ -88,4 +88,4 @@ class MainApp(tk.Frame):
             self._displayRes.insert(i, out)
             
     def viewCosts(self):
-        self._displayCosts['text'] = self.algo.costs
+        self._displayCosts['text'] = self._displayCosts['text'] = str(Calc.costTour(self.algo.visited, self.algo.start))+" km parcouru"
