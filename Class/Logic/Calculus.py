@@ -59,18 +59,19 @@ def costTour(vertex, start):
     i = 1
     cost = 0.00
     display = []
+    res = []
     for current in vertex:
-       if i < len(vertex):
-           next = vertex[i]
-           cost += dist(current, next)
-           display.append(current.id)
-           i = i + 1
-    cost += dist(vertex[len(vertex)-1], start)
+        if i < len(vertex):
+            next = vertex[i]
+            cost += dist(current, next)
+            display.append(current.id)
+            i = i + 1
+    cost += dist(vertex[len(vertex) - 1], start)
 
-    print(display)
-    print(cost)
+    res.append(cost)
+    res.append(display)
 
-    return cost
+    return res
 
 
 def truncate(nb, decimals=0):
