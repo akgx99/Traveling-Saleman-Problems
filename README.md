@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Il s'agit d"un projet permettant de tester les applications d'algorithmes du plus court chemin 
+Il s'agit d'un projet permettant de tester les applications d'algorithmes du plus court chemin 
 dans le cadre du cours de recherche opérationnelle de DUT informatique.
 
 ## Dépendances 
